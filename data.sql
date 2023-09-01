@@ -11,3 +11,29 @@ VALUES ('Agumon', '2020-02-03', 0, true, 10.23),
        ('Boarmon', '2005-06-07', 7, true, 20.4, NULL),
        ('Blossom', '1998-10-13', 3, true, 17, NULL),
        ('Ditto', '2022-05-14', 4, true, 22, NULL);
+
+
+INSERT INTO owners (id, full_name, age) VALUES
+    (1, 'Sam Smith', 34),
+    (2, 'Jennifer Orwell', 19),
+    (3, 'Bob', 45),
+    (4, 'Melody Pond', 77),
+    (5, 'Dean Winchester', 14),
+    (6, 'Jodie Whittaker', 38);
+
+-- Assuming your "animals" table has some data with names as placeholders.
+-- Modify these inserts based on your actual data.
+
+UPDATE animals SET species_id = (SELECT id FROM species WHERE name = 'Digimon') WHERE name LIKE '%mon';
+UPDATE animals SET species_id = (SELECT id FROM species WHERE name = 'Pokemon') WHERE species_id IS NULL;
+
+UPDATE animals SET owner_id = (SELECT id FROM owners WHERE full_name = 'Sam Smith') WHERE name = 'Agumon';
+UPDATE animals SET owner_id = (SELECT id FROM owners WHERE full_name = 'Jennifer Orwell') WHERE name IN ('Gabumon', 'Pikachu');
+UPDATE animals SET owner_id = (SELECT id FROM owners WHERE full_name = 'Bob') WHERE name IN ('Devimon', 'Plantmon');
+UPDATE animals SET owner_id = (SELECT id FROM owners WHERE full_name = 'Melody Pond') WHERE name IN ('Charmander', 'Squirtle', 'Blossom');
+UPDATE animals SET owner_id = (SELECT id FROM owners WHERE full_name = 'Dean Winchester') WHERE name IN ('Angemon', 'Boarmon');
+
+
+INSERT INTO species (id, name) VALUES
+    (1, 'Pokemon'),
+    (2, 'Digimon');
