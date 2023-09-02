@@ -72,6 +72,7 @@ CREATE TABLE visits (
     id SERIAL PRIMARY KEY,
     vet_id INTEGER,
     animal_name VARCHAR(255),
+     visit_date DATE,
     FOREIGN KEY (vet_id) REFERENCES vets(id),
     FOREIGN key (animal_name) REFERENCES animals(name)
 );
