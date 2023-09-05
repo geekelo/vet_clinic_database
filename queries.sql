@@ -206,5 +206,3 @@ ORDER BY num_owned DESC
 LIMIT 1;
 
 
-
-
