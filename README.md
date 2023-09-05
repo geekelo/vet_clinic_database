@@ -183,7 +183,10 @@ Example:
 - Twitter: [@twitterhandle](https://twitter.com/geekelo_xyz)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/eloghene-otiede)
 
+👤 **Mahdi Noori**
 
+- GitHub: [@Mahdi Noori](https://github.com/mahdinoori2000)
+- LinkedIn: [@Mahdi Noori](https://www.linkedin.com/in/mahdi-noori-hc201/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
