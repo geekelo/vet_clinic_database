@@ -79,3 +79,13 @@ VALUES
     ('Boarmon', (SELECT id FROM vets WHERE name = 'Maisy Smith'), '2020-08-03'),
     ('Blossom', (SELECT id FROM vets WHERE name = 'Stephanie Mendez'), '2020-05-24'),
     ('Blossom', (SELECT id FROM vets WHERE name = 'William Tatcher'), '2021-01-11');
+
+
+-- Vet clinic database: database performance audit
+
+-- make an email column in the owners
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+-- adding data into visits
+INSERT INTO visits (animal_id, vet_id, date_of_visit) SELECT * FROM (SELECT id FROM animals) animal_ids, (SELECT id FROM vets) vets_ids, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+-- adding data into owners
+insert into owners (full_name, email) select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
