@@ -37,3 +37,11 @@ treatment_id INT,
 FOREIGN KEY (invoice_id) REFERENCES invoices(id),
 FOREIGN KEY (treatment_id)  REFERENCES treatments(id),
 );
+-- create many to many relationship between treatments and medical_histories using a table.
+CREATE TABLE medical_history_treatments(
+id INT PRIMARY KEY,
+medical_history_id INT,
+treatment_id INT,
+FOREIGN KEY (medical_history_id) REFERENCES medical_histories(id),
+FOREIGN KEY (treatment_id) REFERENCES treatments(id)
+);
