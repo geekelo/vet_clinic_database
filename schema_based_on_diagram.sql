@@ -45,3 +45,8 @@ treatment_id INT,
 FOREIGN KEY (medical_history_id) REFERENCES medical_histories(id),
 FOREIGN KEY (treatment_id) REFERENCES treatments(id)
 );
+
+CREATE INDEX idx_medical_history_id ON invoices(medical_history_id);
+CREATE INDEX idx_medical_history_id ON invoices(medical_history_id);
+CREATE INDEX idx_invoice_id ON invoice_items(invoice_id);
+CREATE INDEX idx_treatment_id ON invoice_items(treatment_id);
